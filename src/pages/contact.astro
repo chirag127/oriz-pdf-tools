@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro'
-import { ContactForm } from '@chirag127/oriz-ui'
 import { FAMILY } from '~/lib/family'
+const key = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? ''
 ---
 
 <BaseLayout
@@ -28,11 +28,16 @@ import { FAMILY } from '~/lib/family'
       to my inbox; nothing about the message is stored on this site.
     </p>
 
-    <ContactForm
-      client:load
-      web3formsKey={import.meta.env.PUBLIC_WEB3FORMS_KEY ?? ''}
-      fromName="pdf.oriz.in contact form"
-    />
+    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+      <input type="hidden" name="access_key" value={key} />
+      <input type="hidden" name="subject" value="pdf.oriz.in contact form" />
+      <input type="hidden" name="from_name" value="pdf.oriz.in contact form" />
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="email" name="email" placeholder="Your email" required />
+      <textarea name="message" placeholder="Your message" required></textarea>
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+      <button type="submit">Send</button>
+    </form>
 
     <p class="meta">
       For privacy questions or DMCA notices, see the

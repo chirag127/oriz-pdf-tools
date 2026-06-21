@@ -1,9 +1,15 @@
 /**
  * Single-source-of-truth site identity for oriz-pdf-tools. Imported by the
  * shared scaffolding (account, contact, legal pages) so every site exposes
- * the same OrizSiteConfig shape from @chirag127/oriz-ui.
+ * the same OrizSiteConfig shape.
  */
-import type { OrizSiteConfig } from '@chirag127/oriz-ui'
+type OrizSiteConfig = {
+  slug: string
+  name: string
+  origin: string
+  tagline: string
+  description: string
+}
 
 export const SITE_CONFIG: OrizSiteConfig = {
   slug: 'pdf',
