@@ -6,9 +6,8 @@ import sitemap from '@astrojs/sitemap'
 import AstroPWA from '@vite-pwa/astro'
 import tailwindcss from '@tailwindcss/vite'
 
-// ponytail: @vite-pwa/astro directly until @chirag127/astro-pwa wrapper
-// ships real defaults. The wrapper will collapse this config block to one
-// line once published; today it's a 12-line manifest in this file.
+// Uses @vite-pwa/astro directly — small, well-supported community plugin.
+// PWA manifest + workbox config is inlined below.
 
 export default defineConfig({
   site: 'https://pdf.oriz.in',
