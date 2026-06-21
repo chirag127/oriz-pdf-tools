@@ -1,21 +1,12 @@
 // @ts-check
-import { defineConfig } from 'astro/config'
-import react from '@astrojs/react'
-import mdx from '@astrojs/mdx'
-import sitemap from '@astrojs/sitemap'
 import AstroPWA from '@vite-pwa/astro'
-import tailwindcss from '@tailwindcss/vite'
+import { shell } from '@chirag127/astro-shell/shell'
 
 // Uses @vite-pwa/astro directly — small, well-supported community plugin.
 // PWA manifest + workbox config is inlined below.
-
-export default defineConfig({
+export default shell({
   site: 'https://pdf.oriz.in',
-  output: 'static',
   integrations: [
-    react(),
-    mdx(),
-    sitemap(),
     AstroPWA({
       registerType: 'autoUpdate',
       manifest: {
@@ -40,7 +31,6 @@ export default defineConfig({
     }),
   ],
   vite: {
-    plugins: [tailwindcss()],
     optimizeDeps: {
       exclude: ['pdfjs-dist'],
     },

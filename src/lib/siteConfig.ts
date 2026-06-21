@@ -1,15 +1,4 @@
-/**
- * Single-source-of-truth site identity for oriz-pdf-tools. Imported by the
- * shared scaffolding (account, contact, legal pages) so every site exposes
- * the same OrizSiteConfig shape.
- */
-type OrizSiteConfig = {
-  slug: string
-  name: string
-  origin: string
-  tagline: string
-  description: string
-}
+import type { OrizSiteConfig } from '@chirag127/astro-shell/types'
 
 export const SITE_CONFIG: OrizSiteConfig = {
   slug: 'pdf',
