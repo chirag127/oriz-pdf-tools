@@ -6,6 +6,7 @@ import { shell } from '@chirag127/astro-shell/shell'
 // PWA manifest + workbox config is inlined below.
 export default shell({
   site: 'https://pdf.oriz.in',
+  base: process.env.PUBLIC_BASE_PATH ?? '/',
   integrations: [
     AstroPWA({
       registerType: 'autoUpdate',
