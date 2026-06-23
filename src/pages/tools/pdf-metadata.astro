@@ -1,0 +1,23 @@
+---
+import ToolLayout from "~/layouts/ToolLayout.astro";
+import { TOOL_FAQS } from "~/data/tool-faqs";
+import { TOOL_PROSE } from "~/data/tool-prose";
+
+const slug = "pdf-metadata";
+const title = "PDF Metadata Editor — Free & Private | oriz / pdf-tools";
+const description = "Edit PDF title, author, subject, and keywords. No upload needed — runs entirely in your browser.";
+const faqs = TOOL_FAQS[slug] ?? [];
+const proseHTML = TOOL_PROSE[slug] ?? "";
+---
+
+<ToolLayout slug={slug} title={title} description={description} faqs={faqs}>
+	<Fragment set:html={proseHTML} />
+</ToolLayout>
+
+<script>
+	import { createElement } from "react";
+	import { createRoot } from "react-dom/client";
+	import MetadataPDF from "../../tools/MetadataPDF";
+	const m = document.getElementById("tool-mount");
+	if (m) createRoot(m).render(createElement(MetadataPDF));
+</script>

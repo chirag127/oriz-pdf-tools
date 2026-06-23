@@ -292,6 +292,24 @@ export const tools: Tool[] = [
 		color: "#d97706",
 		bgColor: "#fffbeb",
 	},
+	{
+		slug: "pdf-metadata",
+		name: "Edit PDF Metadata",
+		description: "Edit title, author, subject, and keywords",
+		category: "edit",
+		icon: "file-edit",
+		color: "#7c3aed",
+		bgColor: "#f5f3ff",
+	},
+	{
+		slug: "pdf-word-count",
+		name: "PDF Word Count",
+		description: "Count words, characters, and sentences in a PDF",
+		category: "edit",
+		icon: "align-left",
+		color: "#059669",
+		bgColor: "#ecfdf5",
+	},
 
 	// ── PDF Security ──────────────────────────────────────────
 	{

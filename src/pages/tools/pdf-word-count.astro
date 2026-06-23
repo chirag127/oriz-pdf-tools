@@ -1,0 +1,23 @@
+---
+import ToolLayout from "~/layouts/ToolLayout.astro";
+import { TOOL_FAQS } from "~/data/tool-faqs";
+import { TOOL_PROSE } from "~/data/tool-prose";
+
+const slug = "pdf-word-count";
+const title = "PDF Word Count — Free & Private | oriz / pdf-tools";
+const description = "Count words, characters, sentences, and paragraphs in any PDF. 100% in-browser, no upload.";
+const faqs = TOOL_FAQS[slug] ?? [];
+const proseHTML = TOOL_PROSE[slug] ?? "";
+---
+
+<ToolLayout slug={slug} title={title} description={description} faqs={faqs}>
+	<Fragment set:html={proseHTML} />
+</ToolLayout>
+
+<script>
+	import { createElement } from "react";
+	import { createRoot } from "react-dom/client";
+	import WordCountPDF from "../../tools/WordCountPDF";
+	const m = document.getElementById("tool-mount");
+	if (m) createRoot(m).render(createElement(WordCountPDF));
+</script>

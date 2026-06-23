@@ -1,6 +1,7 @@
 ---
 import '~/styles/global.css'
 import '@chirag127/astro-shell/tokens.css'
+import FamilyChrome from '@chirag127/astro-shell/components/FamilyChrome.astro'
 import Header from '~/components/Header.astro'
 import Sidebar from '@chirag127/astro-chrome/Sidebar.astro'
 import Footer from '@chirag127/astro-chrome/Footer.astro'
@@ -94,6 +95,7 @@ const ga4Id = import.meta.env.PUBLIC_GA4_ID
     }
   </head>
   <body>
+    <FamilyChrome slug="oriz-slice-pdf-tools-app" title="PDF" accent="#c1440e" />
     <a href="#main" class="skip-link">Skip to content</a>
     <Header />
     <Sidebar>

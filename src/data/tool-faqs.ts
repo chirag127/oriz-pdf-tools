@@ -151,4 +151,16 @@ export const TOOL_FAQS: Record<string, FAQItem[]> = {
 	{ question: "Can I convert multiple Word files at once?", answer: "Currently, only one file at a time is supported. Merge multiple PDFs after converting if needed." },
 	{ question: "What about images in Word?", answer: "Inline images should be preserved in the PDF output." },
 ],
+	"pdf-metadata": [
+	{ question: "What metadata fields can I edit?", answer: "You can edit Title, Author, Subject, Keywords, Creator, and Producer fields stored in the PDF document properties." },
+	{ question: "Will editing metadata change the visible content?", answer: "No, metadata is stored separately from the document content. Changing it does not alter any visible text, images, or formatting." },
+	{ question: "Is my file uploaded to a server?", answer: "No. The entire metadata editing operation runs in your browser using pdf-lib. Your file never leaves your device." },
+	{ question: "Can I clear existing metadata?", answer: "Yes. Simply clear the field you want to remove and save. The field will be left unset in the updated PDF." },
+],
+	"pdf-word-count": [
+	{ question: "How is the word count calculated?", answer: "Text is extracted from each page using PDF.js and split on whitespace. Each whitespace-delimited token counts as one word." },
+	{ question: "Does it work with scanned PDFs?", answer: "Scanned PDFs contain images of text, not actual text, so the count will be zero or very low. Use our OCR PDF tool first to make the document text-searchable." },
+	{ question: "Is my PDF uploaded anywhere?", answer: "No. All text extraction runs locally in your browser. Nothing is sent to a server." },
+	{ question: "What other statistics are shown?", answer: "In addition to word count you get: total characters, characters excluding spaces, sentence count, paragraph count, and total page count." },
+],
 };
